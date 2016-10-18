@@ -3,7 +3,8 @@
 App to organize in subdirs my files in download directory.
 App.config contains de BaseDirectory and subdirs with file extensions.
 
-Ex:```xml 
+Ex:
+```xml 
 <appSettings>
    <add key="BaseDirectory" value="d:\notebook\downloads" />
    <add key="videos" value="mp4;avi;mpeg" />
