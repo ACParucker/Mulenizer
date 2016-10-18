@@ -14,24 +14,7 @@ namespace ACParucker.Mulenizer
 
         public Mulenizer()
         {
-            /*this.ConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mulenizer.conf");
-
-            FileInfo ConfigFileInfo = new FileInfo(this.ConfigFilename);
-
-            if (!ConfigFileInfo.Exists)
-            {
-                System.Console.WriteLine("mulenizer.conf not found.");
-                Environment.Exit(-1);
-            }
-
-            if (ConfigFileInfo.Length == 0)
-            {
-                System.Console.WriteLine("mulenizer.conf is empty.");
-                Environment.Exit(-1);
-            }
-            */
         }
-
 
         public void LoadConfiguration()
         {
@@ -60,7 +43,18 @@ namespace ACParucker.Mulenizer
         {
             foreach(var extFol in this.extensionFolder)
             {
+                string filter = "*." + extFol.Key;
+                string dir = Path.Combine(this.BaseDirectory, extFol.Value);
 
+                foreach(string file in Directory.EnumerateFiles(this.BaseDirectory, filter))
+                {
+                    if (!Directory.Exists(dir))
+                        Directory.CreateDirectory(dir);
+
+                    string dest = Path.Combine(dir, Path.GetFileName(file));
+
+                    File.Move(file, dest);
+                }
             }
         }
     }
