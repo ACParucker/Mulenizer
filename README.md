@@ -3,7 +3,7 @@
 App to organize in subdirs my files in download directory.
 App.config contains de BaseDirectory and subdirs with file extensions.
 
-Ex:
+Ex:  
 ```xml 
 <appSettings>
    <add key="BaseDirectory" value="d:\notebook\downloads" />
@@ -15,7 +15,9 @@ Ex:
    <add key="images" value="jpg;png;jpeg;gif"/>
 </appSettings>
 
-The app scans my basedirectory and for every file get the extension and try to move the file to subdir if extension is configured.
+The app scans my basedirectory and for every file get the extension and try to move the file 
+to subdir if extension is configured.
+
 Ex.
 My basedirectory before app run:
 
