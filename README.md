@@ -4,15 +4,16 @@ App to organize in subdirs my files in download directory.
 App.config contains de BaseDirectory and subdirs with file extensions.
 
 Ex:
-  <appSettings>
-    <add key="BaseDirectory" value="d:\notebook\downloads" />
-    <add key="videos" value="mp4;avi;mpeg" />
-    <add key="office" value="xls;xlsx;doc;docx" />
-    <add key="pdf" value="pdf" />
-    <add key="books" value="mobi;epub" />
-    <add key="iso" value="iso" />
-    <add key="images" value="jpg;png;jpeg;gif"/>
-  </appSettings>
+```xml 
+<appSettings>
+   <add key="BaseDirectory" value="d:\notebook\downloads" />
+   <add key="videos" value="mp4;avi;mpeg" />
+   <add key="office" value="xls;xlsx;doc;docx" />
+   <add key="pdf" value="pdf" />
+   <add key="books" value="mobi;epub" />
+   <add key="iso" value="iso" />
+   <add key="images" value="jpg;png;jpeg;gif"/>
+</appSettings>
 
 The app scans my basedirectory and for every file get the extension and try to move the file to subdir if extension is configured.
 Ex.
